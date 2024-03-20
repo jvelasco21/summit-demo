@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -11,59 +13,121 @@
  */
 
 :root {
-  /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
-  --background-color: white;
-  --light-color: #eee;
+  /* base colors */
+  --white: #fff;
+  --black: #000;
+  --blue: #0f059e;
+  --purple: #6a40ac;
+  --skyblue: #a7c6ed;
+  --gray: #f1f1f2;
   --dark-color: #ccc;
-  --text-color: black;
+  --gray-2: #D1D3D4;
+  
+  /* text colors */
+  --text-color: var(--black);
+
+  /* links/CTAs */
+  --link-color: #753bbc;
+  --link-hover-color: #136ff6;
+  --cta-color: var(--purple);
+  --cta-hover: #753bbc;
+  --cta-hover-active:#204d74; 
+
+  /* navigation colors */
+  --navigation-color: var(--black);
+  --navigation-hover: #753bbc;
+  --navigation-color-mobile: var(--white);
+
+  /* backgrounds */
+  --background-color: var(--white);
+  --header-background-color: var(--white);
+  --utility-background-color: var(--blue);
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --body-font-family: "gilroy-regular", "arial", "helvetica", "sans-serif";
+  --heading-font-family: "gilroy-semibold", "arial", "helvetica", "sans-serif";
+  --navigation-font-family: "gilroy-semibold", "arial", "helvetica", "sans-serif";
+  --fixed-font-family: "gilroy-semibold", "arial", "helvetica", "sans-serif";
 
   /* body sizes */
-  --body-font-size-m: 22px;
+  --body-font-size-m: 14px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
-  --heading-font-size-l: 32px;
-  --heading-font-size-m: 24px;
-  --heading-font-size-s: 20px;
-  --heading-font-size-xs: 18px;
+  --heading-font-size-xxl: 58px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+
+  /* button sizes */
+  --button-font-size: 12px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 115px;
+  --nav-mobile-height: 62px;
+
+  /* base widths */
+  --max-width: 1024px;
+
+  /* carousel colors */
+  --carousel-color-heading: var(--black);
+  --carousel-color-description: var(--black);
+  --carousel-color-indicator: var(--purple);
+  --carousel-mobile-heading-font-size: 42px;
+
+  /* stats */
+  --stats-heading-font-size: 80px;
+  --stats-heading-mobile-font-size: 48px;
+  --stats-heading-font-family: var(--heading-font-family);
+
+  /* story teaser */
+  --story-heading-font-size: 22px;
+  --story-heading-font-family: var(--heading-font-family);
+  --story-font-size: var(--body-font-size-xs);
+  --news-color-background: #BFD3F3;
+
+  /* footer */
+  --footer-font-family: var(--heading-font-family);
+  --footer-font-size: 13px;
+
+  /* breakpoints */
+  --breakpoint-tablet: 600px;
+  --breakpoint-desktop: 900px;
 }
 
 @font-face {
   font-family: roboto-fallback;
   size-adjust: 100.06%;
   ascent-override: 95%;
-  src: local('Arial');
+  src: local('arial');
 }
 
 @media (width >= 900px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
+    --heading-font-size-xxl: 58px;
+    --heading-font-size-xl: 32px;
+    --heading-font-size-l: 24px;
+    --heading-font-size-m: 20px;
+    --heading-font-size-s: 18px;
+    --heading-font-size-xs: 16px;
   }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   font-size: var(--body-font-size-m);
   margin: 0;
   font-family: var(--body-font-family);
-  line-height: 1.6;
+  line-height: 1.4;
+  font-weight: 500;
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
@@ -77,6 +141,10 @@ header {
   height: var(--nav-height);
 }
 
+main { 
+  padding-top: var(--nav-mobile-height);
+}
+
 h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
@@ -87,16 +155,29 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl)
+}
 
-p, dl, ol, ul, pre, blockquote {
-  margin-top: 1em;
-  margin-bottom: 1em;
+h2 {
+  font-size: var(--heading-font-size-xl)
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+  font-weight: 500;
+}
+
+h4 {
+  font-size: var(--heading-font-size-m)
+}
+
+h5 {
+  font-size: var(--heading-font-size-s)
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs)
 }
 
 code, pre {
@@ -134,27 +215,31 @@ a:hover {
 /* buttons */
 a.button:any-link, button {
   font-family: var(--body-font-family);
+  font-size: var(--button-font-size);
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: 10px 20px;
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: var(--cta-color);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 20px;
+  line-height: 1;
+  transition: .1s;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
+  background-color: var(--cta-hover);
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 button:disabled, button:disabled:hover {
@@ -187,24 +272,120 @@ main img {
 
 /* sections */
 main .section {
-  padding: 64px 16px;
+  padding: 20px 16px;
 }
 
 @media (width >= 600px) {
+  main { 
+    padding-top: var(--nav-height);
+  }
+  
   main .section {
-    padding: 64px 32px;
+    padding: 20px 32px;
   }
 }
 
 @media (width >= 900px) {
   .section > div {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: auto;
   }
+}
+
+/* section full width */
+.section.full-width {
+  padding: 0;
+}
+
+.section.full-width > div {
+  max-width: none;
+}
+
+/* section no padding */
+.section.no-padding {
+  padding: 0;
+}
+
+/* section flex justify */
+.section.flex-justify-space-between .block > div > div{
+  justify-content: space-between;
+  display: flex;
+}
+
+.section.flex-justify-center .block > div > div {
+  justify-content: center;
+  display: flex;
+}
+
+.section.flex-justify-flex-start .block > div > div {
+  justify-content: flex-start;
+  display: flex;
+}
+
+.section.flex-justify-flex-end .block > div > div {
+  justify-content: flex-end;
+  display: flex;
 }
 
 /* section metadata */
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+}
+
+main .section.gray {
+  background-color: var(--gray);
+}
+
+main .section.blue {
+  background-color: var(--blue);
+}
+
+main .section.babyblue {
+  background-color: var(--skyblue);
+}
+
+main .section.gray-inner > div {
+  background-color: var(--gray);
+}
+
+main .section.blue-inner > div{
+  background-color: var(--blue);
+}
+
+main .section.babyblue-inner > div {
+  background-color: var(--skyblue);
+}
+
+
+/* text alignment */
+.section.content-center {
+  text-align: center;
+}
+
+.section.content-right {
+  text-align: right;
+}
+
+/* clients section */
+.clients-section.section > div:not(.default-content-wrapper) { 
+  padding: 20px 16px 0;
+}
+
+.clients-section.section .button-container {
+  margin: 0;
+}
+
+/* tablet modifications */
+@media (width >= 600px) {
+  .clients-section.section > div:not(.default-content-wrapper) { 
+    padding: 20px 20px 0;
+  }
+}
+
+/* desktop modifications */
+@media (width >= 900px) {
+  .clients-section.section > div:not(.default-content-wrapper) { 
+    padding: 100px 20px 0;
+  }
 }

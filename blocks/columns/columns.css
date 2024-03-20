@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -29,5 +30,319 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+/* columns - no gap */
+.columns.no-gap > div {
+  gap: 0;
+}
+
+/* columns - top alignment */
+.columns.flex-align-top > div {
+  align-items: flex-start;
+}
+
+.columns.flex-align-stretch > div {
+  align-items: stretch;
+}
+
+.columns.flex-align-bottom > div {
+  align-items: flex-end;
+}
+
+.columns.flex-align-center > div {
+  align-items: center;
+}
+
+/* columns - flex justify */
+.columns.flex-justify-space-between > div {
+  justify-content: space-between;
+}
+
+.columns.flex-justify-center > div {
+  justify-content: center;
+}
+
+.columns.flex-justify-flex-start > div {
+  justify-content: flex-start;
+}
+
+.columns.flex-justify-flex-end > div {
+  justify-content: flex-end;
+}
+
+/* columns - background colors */
+.blue-babyblue-grey.columns > div {
+  flex-flow: row wrap;
+}
+
+.blue-babyblue-grey.columns > div > div {
+  flex: unset;
+}
+
+.blue-babyblue-grey.columns > div > div:nth-child(1){
+  background: var(--blue);
+  width: 50%;
+}
+
+.blue-babyblue-grey.columns > div > div:nth-child(2){
+  background: var(--skyblue);
+  width: 50%;
+}
+
+.blue-babyblue-grey.columns > div > div:nth-child(3){
+  background: var(--gray-2);
+  width: 100%;
+  order: 3;
+}
+
+/* tablet modifications */
+@media (width >= 600px) {
+  .blue-babyblue-grey.columns > div {
+    flex-flow: row nowrap;
+  }
+  
+  .blue-babyblue-grey.columns > div > div:nth-child(1){
+    width: 25%;
+  }
+  
+  .blue-babyblue-grey.columns > div > div:nth-child(2){
+    width: 25%;
+  }
+
+  .blue-babyblue-grey.columns > div > div:nth-child(3){
+    width: 50%;
+  }
+}
+
+/* stats */
+.stats.columns > div > div {
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.stats.columns > div > div:nth-child(1){
+  color: var(--white);
+}
+
+.stats.columns .columns-img-col{
+  padding: 0;
+}
+
+.stats h3 {
+  font-family: var(--stats-heading-font-family);
+  font-size: var(--stats-heading-mobile-font-size);
+  font-weight: 600;
+  margin: 0;
+}
+
+.stats p {
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+}
+
+/* desktop modifications */
+@media (width >= 900px) {
+  .stats h3 {
+    font-size: var(--stats-heading-font-size);
+  }
+}
+
+
+/* Columns - circle image teaser */
+.teaser-circle-image.columns > div {
+  align-items: stretch;
+}
+
+.teaser-circle-image.columns > div > div {
+  position: relative;
+  padding: 0;
+  font-size: var(--story-font-size);
+  line-height: 1.2;
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+}
+
+.teaser-circle-image.columns h3{
+  font-size: var(--story-heading-font-size);
+  font-family: var(--story-heading-font-family);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.teaser-circle-image.columns picture{
+  height: auto;
+  width: 30%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.teaser-circle-image.columns .button{
+  margin: 0;
+}
+
+
+
+/* tablet modifications */
+@media (width >= 600px) {
+  .teaser-circle-image.columns p {
+    width: 52%;
+    margin: 0 0 1em;
+  }
+
+  .teaser-circle-image.columns h3{
+    margin: 0 0 20px;
+  }
+}
+
+/* desktop modifications */
+@media (width >= 900px) {
+  .teaser-circle-image.columns picture{
+    width: 60%;
+  }
+
+  .teaser-circle-image.columns p {
+    width: 52%;
+  }
+
+  .teaser-circle-image.columns .button-container {
+    margin: 0;
+    position: absolute; 
+    bottom: 0;
+    left: 32px;
+  }
+
+  .teaser-circle-image.columns > div > div {
+    padding: 130px 0 40px 32px;
+  }  
+
+  .teaser-circle-image.columns h3{
+    margin: 0 0 30px;
+  }
+}
+
+/* Modified circle image teaser */
+.teaser-circle-image-bottom > div{
+  gap: 0;
+}
+
+.teaser-circle-image-bottom > div > div:first-child{
+  background: var(--news-color-background);
+}
+
+.teaser-circle-image-bottom > div > div picture{
+  width: auto !important;
+}
+
+.teaser-circle-image-bottom > div > div:first-child picture{
+  top: auto;
+  bottom: 20px;
+  right: 20px;
+  max-width: 250px;
+}
+
+.teaser-circle-image-bottom > div > div:last-child picture{
+  z-index: 0;
+  height: 100%;
+}
+
+.teaser-circle-image-bottom > div > div:last-child img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: right bottom;
+}
+
+.teaser-circle-image-bottom.teaser-circle-image p:not(:last-child) { 
+  max-width: 410px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.teaser-circle-image-bottom.teaser-circle-image .button-container {
+  left: auto;
+  top: auto;
+}
+
+.teaser-circle-image-bottom.teaser-circle-image > div > div:last-child p{
+  width: 51%;
+}
+
+.teaser-circle-image-bottom.teaser-circle-image > div > div:last-child .button-container {
+  position: absolute;
+  bottom: 20px;
+}
+
+.teaser-circle-image-bottom.teaser-circle-image.columns > div > div{
+  padding: 40px 16px;
+  min-height: 500px;
+}
+
+.teaser-circle-image-bottom.teaser-circle-image h3 {
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+/* tablet modifications */
+@media (width >= 600px) {
+  .teaser-circle-image-bottom.teaser-circle-image.columns > div {
+    flex-flow: row nowrap;
+  }
+
+  .teaser-circle-image-bottom.teaser-circle-image.columns > div > div{
+    padding: 50px 32px;
+    min-height: 500px;
+  }
+}
+
+/* desktop modifications */
+@media (width >= 900px) {
+  .teaser-circle-image-bottom > div > div:last-child {
+    justify-content: center;
+  }
+}
+
+
+/* Clients section */
+.clients.columns img {
+  width: auto;
+  height: auto;
+}
+
+.clients.columns a {
+  display: inline-block;
+  padding: 0 15px;
+  width: 33.3%;
+  flex-shrink: 0;
+}
+
+.clients.columns > div > div{
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+/* tablet modifications */
+@media (width >= 600px) {
+  .clients.columns a{
+    width: auto;
+    flex-shrink: 1;
+  }
+
+  .clients.columns > div > div{
+    flex-flow: row nowrap !important; 
   }
 }
