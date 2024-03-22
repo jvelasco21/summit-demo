@@ -138,7 +138,13 @@ body.appear {
 }
 
 header {
-  height: var(--nav-height);
+  height: var(--nav-mobile-height);
+}
+
+@media (width >=600px) {
+  header {
+    height: var(--nav-height);
+  }
 }
 
 main { 
