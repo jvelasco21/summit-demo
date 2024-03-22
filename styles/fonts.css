@@ -19,22 +19,26 @@
 @font-face {
   font-family: gilroy-semibold;
   src: url('../fonts/35BE25_0_0.eot');
-  src: url('../fonts/35BE25_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/35BE25_0_0.woff2') format('woff2'),url('../fonts/35BE25_0_0.woff') format('woff'),url('../fonts/35BE25_0_0.ttf') format('truetype')
+  src: url('../fonts/35BE25_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/35BE25_0_0.woff2') format('woff2'),url('../fonts/35BE25_0_0.woff') format('woff'),url('../fonts/35BE25_0_0.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: gilroy-regular;
   src: url('../fonts/35BE25_1_0.eot');
-  src: url('../fonts/35BE25_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/35BE25_1_0.woff2') format('woff2'),url('../fonts/35BE25_1_0.woff') format('woff'),url('../fonts/35BE25_1_0.ttf') format('truetype')
+  src: url('../fonts/35BE25_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/35BE25_1_0.woff2') format('woff2'),url('../fonts/35BE25_1_0.woff') format('woff'),url('../fonts/35BE25_1_0.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: gilroy-bold;
   src: url('../fonts/35BE25_2_0.eot');
-  src: url('../fonts/35BE25_2_0.eot?#iefix') format('embedded-opentype'),url('../fonts/35BE25_2_0.woff2') format('woff2'),url('../fonts/35BE25_2_0.woff') format('woff'),url('../fonts/35BE25_2_0.ttf') format('truetype')
+  src: url('../fonts/35BE25_2_0.eot?#iefix') format('embedded-opentype'),url('../fonts/35BE25_2_0.woff2') format('woff2'),url('../fonts/35BE25_2_0.woff') format('woff'),url('../fonts/35BE25_2_0.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: kotex-bold;
-  src: url('../fonts/Kotex-Bold.otf')
+  src: url('../fonts/Kotex-Bold.otf');
+  font-display: swap;
 }
