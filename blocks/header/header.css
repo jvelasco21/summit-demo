@@ -278,6 +278,7 @@ header {
   width: 100%;
   display: inline-block !important;
   height: auto;
+  max-width: 244px;
 }
 
 .main-nav-columns .columns-img-col picture {
@@ -306,6 +307,7 @@ header {
 
   .main-nav-columns .columns-img-col img {
     width: auto;
+    max-width: 220px;
   }
 }
 
